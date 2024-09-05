@@ -2,3 +2,17 @@
     position: absolute;
     top: 25%;
 }
+
+.bgDot1 {
+    margin-top: -8rem;
+    margin-left: -3rem;
+    position: absolute;
+    z-index: -1;
+}
+.bgDot2 {
+    top: 1rem;
+    left: 36rem;
+    position: absolute;
+    z-index: -1;
+}
+

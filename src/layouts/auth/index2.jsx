@@ -5,10 +5,10 @@ import routes from "routes.js";
 import FixedPlugin from "components/fixedPlugin/FixedPlugin";
 import Video from "../../assets/img/auth/video.mp4";
 import bgDot from "../../assets/img/auth/Dot.png";
-import SignIn from "views/auth/SignIn";
-import './auth.css'
+import SignUp from "views/auth/SignUp";
+import "./auth.css";
 
-export default function Auth() {
+export default function Auth2() {
   // const getRoutes = (routes) => {
   //   return routes.map((prop, key) => {
   //     if (prop.layout === "/auth") {
@@ -29,7 +29,11 @@ export default function Auth() {
           <div className="relative flex">
             <div className="mx-auto flex min-h-full w-full flex-col justify-start pt-12 md:max-w-[75%]  lg:max-w-[1013px] lg:px-8 lg:pt-0 xl:min-h-[100vh] xl:max-w-[1383px] xl:px-0 xl:pl-[150px] xl:pr-[150px]">
               <div className="mb-auto flex flex-col pl-5 pr-5 md:pl-12 md:pr-0 lg:max-w-[48%] lg:pl-0 xl:max-w-full">
-                <Link to="/admin" className="mt-0 w-max lg:pt-10" style={{visibility:"hidden"}}>
+                <Link
+                  to="/admin"
+                  className="mt-0 w-max lg:pt-10"
+                  style={{ visibility: "hidden" }}
+                >
                   <div className="mx-auto flex h-fit w-fit items-center hover:cursor-pointer">
                     <svg
                       width="8"
@@ -50,17 +54,23 @@ export default function Auth() {
                 </Link>
                 <div className="grid grid-cols-2 grid-rows-1 gap-4">
                   <div>
-
-                  <SignIn/>
-                  <img src={bgDot} alt="" className="bgDot1" />
-                  <img src={bgDot} alt="" className="bgDot2" />
+                    <SignUp />
+                    <img src={bgDot} alt="" className="bgDot1" />
+                    <img src={bgDot} alt="" className="bgDot2" />
                   </div>
-                  <div className={' relative md-max:hidden'}>
+
+                  <div className={" relative md-max:hidden"}>
                     {/* <div
                     className="absolute flex h-full w-full items-end justify-center bg-cover bg-center lg:rounded-bl-[120px] xl:rounded-bl-[200px]"
                     style={{ backgroundImage: `url(${authImg})` }}
                   /> */}
-                    <video src={Video} autoPlay loop muted className="login-video"></video>
+                    <video
+                      src={Video}
+                      autoPlay
+                      loop
+                      muted
+                      className="login-video"
+                    ></video>
                   </div>
                 </div>
               </div>
