@@ -46,8 +46,8 @@ export default function SignUp() {
           <InputField
             variant="auth"
             extra="mb-3"
-            label="Email or Username*"
-            placeholder="Enter your Email or Username"
+            label="Email*"
+            placeholder="Enter your Email"
             id="email"
             type="text"
           />
