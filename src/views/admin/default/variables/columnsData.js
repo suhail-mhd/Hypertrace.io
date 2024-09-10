@@ -35,6 +35,32 @@ export const columnsDataCheck = [
     accessor: "date",
   },
 ];
+export const fleetView = [
+  {
+    Header: "VEHICLE",
+    accessor: "vehicle",
+  },
+  {
+    Header: "TRIP REPORT",
+    accessor: "trip report",
+  },
+  {
+    Header: "DISTANCE REPORT",
+    accessor: "distance report",
+  },
+  {
+    Header: "FUEL LEVEL",
+    accessor: "fuel level",
+  },
+  {
+    Header: "OVER SPEED",
+    accessor: "over speed",
+  },
+  {
+    Header: "ACCIDENT",
+    accessor: "accident",
+  },
+];
 
 export const columnsDataColumns = [
   {
