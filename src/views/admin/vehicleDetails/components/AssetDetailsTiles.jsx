@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import Card from "components/card";
 import { MdBarChart, MdDashboard } from "react-icons/md";
 
-const SliderTiles = () => {
+const AssetDetailsTiles = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -57,4 +57,4 @@ const SliderTiles = () => {
   );
 };
 
-export default SliderTiles;
+export default AssetDetailsTiles;

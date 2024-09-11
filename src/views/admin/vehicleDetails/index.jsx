@@ -4,38 +4,14 @@ import Navbar from "components/navbar";
 import Sidebar from "components/sidebar";
 import Footer from "components/footer/Footer";
 import routes from "routes.js";
-import MiniCalendar from "components/calendar/MiniCalendar";
-import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
-import TotalSpent from "views/admin/default/components/TotalSpent";
-import PieChartCard from "views/admin/default/components/PieChartCard";
 import { IoMdHome } from "react-icons/io";
 import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
 import { FaTruckMoving } from "react-icons/fa";
 
-import {
-  columnsDataCheck,
-  columnsDataComplex,
-  fleetView,
-  fleetDetail,
-} from "./variables/columnsData";
-
 import Widget from "components/widget/Widget";
-import CheckTable from "views/admin/default/components/CheckTable";
-import FleetViewTable from "views/admin/default/components/FleetViewTable";
-import VehicleDetailsTable from "views/admin/default/components/VehicleDetailsTable";
-import ComplexTable from "views/admin/default/components/ComplexTable";
-import DailyTraffic from "views/admin/default/components/DailyTraffic";
-import TaskCard from "views/admin/default/components/TaskCard";
-import OlaMap from "views/admin/default/components/OlaMap";
-import tableDataCheck from "./variables/tableDataCheck.json";
-import tableDataComplex from "./variables/tableDataComplex.json";
-import fleetViewData from "./variables/fleetViewData.json";
-import fleetDetails from "./variables/fleetDetails.json";
-import Card from "components/card";
-import userBanner from "../../../assets/img/dashboards/illustration-john-light 1.png";
-import SliderTiles from "./components/SliderTiles";
-import FleetSummaryDiagram from "./components/FleetSummaryDiagram";
+import General from "./components/General";
+import AssetDetailsTiles from "./components/AssetDetailsTiles";
 
 const VehicleDetails = (props) => {
    const { ...rest } = props;
@@ -94,15 +70,12 @@ const VehicleDetails = (props) => {
               secondary={getActiveNavbar(routes)}
               {...rest}
             />
-            <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-1">
-              <div>
-                <VehicleDetailsTable
-                  columnsData={fleetDetail}
-                  tableData={fleetDetails}
-                  rowsPerPage={5}
-                />
-              </div>
-            </div>
+            <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
+        <AssetDetailsTiles/>
+        <div className="col-span-2">
+        <General />
+        </div>
+      </div>
             <div className="p-3">
               <Footer />
             </div>
