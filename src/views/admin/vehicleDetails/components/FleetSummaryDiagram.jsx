@@ -63,7 +63,7 @@ const FleetSummaryDiagram = () => {
       <div className="mb-5 flex justify-between">
       <div>
           <h4 className="text-lg font-bold text-navy-700 dark:text-white">
-            Fleet Summary
+            Your Pie Chart
           </h4>
         </div>
         <div className="mb-6 flex items-center justify-center">

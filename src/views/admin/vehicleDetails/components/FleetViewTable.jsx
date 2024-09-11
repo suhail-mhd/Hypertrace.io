@@ -131,7 +131,7 @@ function FleetViewTable(props) {
   });
   return (
     <Card extra={"w-full h-full sm:overflow-auto p-6"}>
-      <header className="relative flex items-center justify-between">
+      <header className="relative flex items-center justify-between pt-4">
         <div className="text-xl font-bold text-navy-700 dark:text-white">
           Fleet View
         </div>

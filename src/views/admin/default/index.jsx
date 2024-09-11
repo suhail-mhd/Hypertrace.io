@@ -76,6 +76,7 @@ const Dashboard = () => {
           <FleetViewTable
             columnsData={fleetView}
             tableData={fleetViewData}
+            rowsPerPage={5}
           />
         </div>
       </div>

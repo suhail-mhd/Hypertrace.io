@@ -16,34 +16,32 @@ import {
   getPaginationRowModel,
 } from "@tanstack/react-table";
 
-function FleetViewTable(props) {
+function VehicleDetailsTable(props) {
   const { tableData } = props;
   const [sorting, setSorting] = React.useState([]);
   let defaultData = tableData;
   const columns = [
-    columnHelper.accessor("vehicle", {
-      id: "vehicle",
+    columnHelper.accessor("identification number", {
+      id: "identification number",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          VEHICLE
+          IDENTIFICATION NUMBER
         </p>
       ),
       cell: (info) => (
         <div className="flex items-center">
-          <Link to="/vehicleDetails">
 
           <p className="ml-3 text-sm font-bold text-navy-700 dark:text-white">
             {info.getValue()}
           </p>
-          </Link>
         </div>
       ),
     }),
-    columnHelper.accessor("trip report", {
-      id: "trip report",
+    columnHelper.accessor("imei", {
+      id: "imei",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          TRIP REPORT
+          IMEI
         </p>
       ),
       cell: (info) => (
@@ -52,11 +50,11 @@ function FleetViewTable(props) {
         </p>
       ),
     }),
-    columnHelper.accessor("distance report", {
-      id: "distance report",
+    columnHelper.accessor("sim number", {
+      id: "sim number",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          DISTANCE REPORT
+          SIM NUMBER
         </p>
       ),
       cell: (info) => (
@@ -65,11 +63,11 @@ function FleetViewTable(props) {
         </p>
       ),
     }),
-    columnHelper.accessor("fuel level", {
-      id: "fuel level",
+    columnHelper.accessor("phone number", {
+      id: "phone number",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          FUEL LEVEL
+          PHONE NUMBER
         </p>
       ),
       cell: (info) => (
@@ -78,11 +76,11 @@ function FleetViewTable(props) {
         </p>
       ),
     }),
-    columnHelper.accessor("over speed", {
-      id: "over speed",
+    columnHelper.accessor("asset name", {
+      id: "asset name",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          OVER SPEED
+          ASSET NAME
         </p>
       ),
       cell: (info) => (
@@ -91,11 +89,11 @@ function FleetViewTable(props) {
         </p>
       ),
     }),
-    columnHelper.accessor("accident", {
-      id: "accident",
+    columnHelper.accessor("vehicle number", {
+      id: "vehicle number",
       header: () => (
         <p className="text-sm font-bold text-gray-600 dark:text-white">
-          ACCIDENT
+          VEHICLE NUMBER
         </p>
       ),
       cell: (info) => (
@@ -265,5 +263,5 @@ function FleetViewTable(props) {
   );
 }
 
-export default FleetViewTable;
+export default VehicleDetailsTable;
 const columnHelper = createColumnHelper();

@@ -5,6 +5,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.slick-slide > div {
+	margin: 10px;
+}
+
 @layer base {
 	html {
 		font-family: "Ubuntu", sans-serif !important;
