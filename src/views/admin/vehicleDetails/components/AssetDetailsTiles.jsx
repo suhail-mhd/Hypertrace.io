@@ -3,7 +3,14 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Card from "components/card";
-import { MdBarChart, MdDashboard } from "react-icons/md";
+import { MdBarChart, MdDashboard, MdOutlineUpdate  } from "react-icons/md";
+import { IoFootstepsSharp } from "react-icons/io5";
+import { GiMovementSensor } from "react-icons/gi";
+import { IoIosAlert } from "react-icons/io";
+import { SiStatuspage } from "react-icons/si";
+import { FaBatteryThreeQuarters, FaSignal  } from "react-icons/fa6";
+import { RiGpsLine } from "react-icons/ri";
+import { LuRadioTower } from "react-icons/lu";
 
 const AssetDetailsTiles = () => {
   const settings = {
@@ -17,14 +24,15 @@ const AssetDetailsTiles = () => {
   };
 
   const cards = [
-    { id: 1, title: "Card 1", content: "Content 1" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 2, title: "Card 2", content: "Content 2" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 3, title: "Card 3", content: "Content 3" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 4, title: "Card 4", content: "Content 4" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 5, title: "Card 5", content: "Content 5" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 6, title: "Card 6", content: "Content 6" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 7, title: "Card 7", content: "Content 7" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 8, title: "Card 8", content: "Content 8" , icon:<MdBarChart className="h-7 w-7"/> },
+    { id: 1, title: "Steps taken", content: "Content 1" , icon:<IoFootstepsSharp className="h-7 w-7 text-blue-1000"/> },
+    { id: 2, title: "Movement count", content: "Content 2" , icon:<GiMovementSensor className="h-7 w-7 text-blue-1000"/> },
+    { id: 3, title: "Alerts count", content: "Content 3" , icon:<IoIosAlert className="h-7 w-7 text-blue-1000"/> },
+    { id: 4, title: "Last updated date/time", content: "Content 4" , icon:<MdOutlineUpdate  className="h-7 w-7 text-blue-1000"/> },
+    { id: 5, title: "Current status", content: "Content 5" , icon:<SiStatuspage className="h-7 w-7 text-blue-1000"/> },
+    { id: 6, title: "Battery %", content: "Content 6" , icon:<FaBatteryThreeQuarters className="h-7 w-7 text-blue-1000"/> },
+    { id: 7, title: "Signal strength", content: "Content 7" , icon:<FaSignal  className="h-7 w-7 text-blue-1000"/> },
+    { id: 8, title: "GPS signal quality", content: "Content 8" , icon:<RiGpsLine className="h-7 w-7 text-blue-1000"/> },
+    { id: 8, title: "Tower identification", content: "Content 8" , icon:<LuRadioTower className="h-7 w-7 text-blue-1000"/> },
     // Add more cards as needed
   ];
 

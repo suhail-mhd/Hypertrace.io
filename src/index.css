@@ -9,12 +9,17 @@
 	margin: 10px;
 }
 
+.slick-dots li.slick-active button:before {
+    color:#EB3223 !important;
+}
+
 @layer base {
 	html {
 		font-family: "Ubuntu", sans-serif !important;
 		font-feature-settings: 'kern' !important;
 		-webkit-font-smoothing: antialiased;
 		letter-spacing: -0.5px;
+		overflow-x: hidden;
 	}
 }
 

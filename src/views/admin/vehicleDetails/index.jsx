@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, Link } from "react-router-dom";
 import Navbar from "components/navbar";
 import Sidebar from "components/sidebar";
 import Footer from "components/footer/Footer";
@@ -14,7 +14,7 @@ import General from "./components/General";
 import AssetDetailsTiles from "./components/AssetDetailsTiles";
 
 const VehicleDetails = (props) => {
-   const { ...rest } = props;
+  const { ...rest } = props;
   const location = useLocation();
   const [open, setOpen] = React.useState(true);
   const [currentRoute, setCurrentRoute] = React.useState("Vehicle details");
@@ -70,13 +70,20 @@ const VehicleDetails = (props) => {
               secondary={getActiveNavbar(routes)}
               {...rest}
             />
+            <div className="flex justify-end">
+              <Link to="/admin">
+                <button className="linear mr-2 mt-5 rounded-[20px] bg-gray-1000 px-4 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700 dark:bg-blue-1000 dark:hover:bg-brand-300 dark:active:opacity-90 md-max:w-32">
+                  Back
+                </button>
+              </Link>
+            </div>
             <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
-        <AssetDetailsTiles/>
-        <div className="col-span-2">
-        <General />
-        </div>
-      </div>
-            <div className="p-3">
+              <div className="col-span-2">
+                <General />
+              </div>
+              <AssetDetailsTiles />
+            </div>
+            <div className="mt-9 p-3">
               <Footer />
             </div>
           </div>

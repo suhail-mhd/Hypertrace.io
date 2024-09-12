@@ -3,7 +3,13 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Card from "components/card";
-import { MdBarChart, MdDashboard } from "react-icons/md";
+import { MdBarChart, MdDashboard, MdFlag, MdNextPlan } from "react-icons/md";
+import { FaTruckMoving, FaRoute  } from "react-icons/fa";
+import { FaTruckFast } from "react-icons/fa6";
+import { LuParkingCircle } from "react-icons/lu";
+import { GiUnplugged } from "react-icons/gi";
+import { BsDatabaseFillX } from "react-icons/bs";
+import { SlSizeActual } from "react-icons/sl";
 
 const SliderTiles = () => {
   const settings = {
@@ -17,14 +23,15 @@ const SliderTiles = () => {
   };
 
   const cards = [
-    { id: 1, title: "Card 1", content: "Content 1" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 2, title: "Card 2", content: "Content 2" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 3, title: "Card 3", content: "Content 3" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 4, title: "Card 4", content: "Content 4" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 5, title: "Card 5", content: "Content 5" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 6, title: "Card 6", content: "Content 6" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 7, title: "Card 7", content: "Content 7" , icon:<MdBarChart className="h-7 w-7"/> },
-    { id: 8, title: "Card 8", content: "Content 8" , icon:<MdBarChart className="h-7 w-7"/> },
+    { id: 1, title: "Number of Vehicle", content: "22" , icon:<FaTruckMoving className="h-7 w-7 text-blue-1000"/> },
+    { id: 2, title: "Currently Moving", content: "3" , icon:<FaTruckFast className="h-7 w-7 text-blue-1000"/> },
+    { id: 3, title: "Currently Parked", content: "15" , icon:<LuParkingCircle className="h-7 w-7 text-blue-1000"/> },
+    { id: 4, title: "Device Pluggedout", content: "3" , icon:<GiUnplugged className="h-7 w-7 text-blue-1000"/> },
+    { id: 5, title: "No Recent Data", content: "1" , icon:<BsDatabaseFillX className="h-7 w-7 text-blue-1000"/> },
+    { id: 6, title: "Total Routes", content: "16" , icon:<FaRoute  className="h-7 w-7 text-blue-1000"/> },
+    { id: 7, title: "Total Destination", content: "129" , icon:<MdFlag  className="h-7 w-7 text-blue-1000"/> },
+    { id: 8, title: "Planned Distance", content: "4,285" , icon:<MdNextPlan  className="h-7 w-7 text-blue-1000"/> },
+    { id: 8, title: "Actual Distance", content: "4,312" , icon:<SlSizeActual className="h-7 w-7 text-blue-1000"/> },
     // Add more cards as needed
   ];
 
