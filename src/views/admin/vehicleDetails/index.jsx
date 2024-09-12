@@ -83,7 +83,7 @@ const VehicleDetails = (props) => {
               </div>
               <AssetDetailsTiles />
             </div>
-            <div className="mt-9 p-3">
+            <div className="mt-[115px] p-3">
               <Footer />
             </div>
           </div>

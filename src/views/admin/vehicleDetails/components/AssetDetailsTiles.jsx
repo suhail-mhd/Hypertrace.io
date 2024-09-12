@@ -16,9 +16,12 @@ const AssetDetailsTiles = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 2,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    // fade: true,
     rows: 2, // Number of rows
     slidesPerRow: 1, // Number of slides per row
   };
@@ -41,7 +44,7 @@ const AssetDetailsTiles = () => {
     // <div className="slider-container">
     <Slider {...settings}>
        {cards.map((card) => (
-      <div key={card.id} className=" h-44 relative rounded-[6px] bg-white bg-clip-border dark:!bg-navy-800 dark:text-white dark:shadow-none">
+      <div key={card.id} className="relative rounded-[6px] bg-white bg-clip-border dark:!bg-navy-800 dark:text-white dark:shadow-none pb-[18px]">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div className="rounded-full bg-lightPrimary p-3 dark:bg-navy-700">
             <span className="flex items-center text-brand-500 dark:text-white">

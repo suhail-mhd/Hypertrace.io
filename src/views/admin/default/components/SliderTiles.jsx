@@ -15,11 +15,13 @@ const SliderTiles = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 2,
     slidesToScroll: 2,
     rows: 2, // Number of rows
     slidesPerRow: 1, // Number of slides per row
+    autoplay: true,
+    autoplaySpeed: 2000,
   };
 
   const cards = [
