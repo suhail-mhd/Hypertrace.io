@@ -22,7 +22,7 @@ const Sidebar = ({ open, onClose }) => {
 
       <div className={`mx-[56px] mt-[50px] flex items-center`}>
         <div className="mt-1 ml-1 h-2.5 text-[28px] font-bold text-blue-1000">
-          Hyper<span class="text-red-1000">trace</span>
+          Hypertrace
         </div>
       </div>
       <div class="mt-[58px] mb-7 h-px bg-gray-300 dark:bg-white/30" />

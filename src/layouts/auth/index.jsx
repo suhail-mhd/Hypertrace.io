@@ -6,7 +6,7 @@ import FixedPlugin from "components/fixedPlugin/FixedPlugin";
 import Video from "../../assets/img/auth/video.mp4";
 import bgDot from "../../assets/img/auth/Dot.png";
 import SignIn from "views/auth/SignIn";
-import './auth.css'
+import "./auth.css";
 
 export default function Auth() {
   // const getRoutes = (routes) => {
@@ -22,53 +22,24 @@ export default function Auth() {
   // };
   document.documentElement.dir = "ltr";
   return (
-    <div>
-      <div className="relative float-right h-full min-h-screen w-full dark:!bg-navy-900">
-        <FixedPlugin />
-        <main className={`mx-auto min-h-screen`}>
-          <div className="relative flex">
-            <div className="mx-auto flex min-h-full w-full flex-col justify-start pt-12 md:max-w-[75%]  lg:max-w-[1013px] lg:px-8 lg:pt-0 xl:min-h-[100vh] xl:max-w-[1383px] xl:px-0 xl:pl-[150px] xl:pr-[150px]">
-              <div className="mb-auto flex flex-col pl-5 pr-5 md:pl-12 md:pr-0 lg:max-w-[48%] lg:pl-0 xl:max-w-full">
-                <Link to="/admin" className="mt-0 w-max lg:pt-10" style={{visibility:"hidden"}}>
-                  <div className="mx-auto flex h-fit w-fit items-center hover:cursor-pointer">
-                    <svg
-                      width="8"
-                      height="12"
-                      viewBox="0 0 8 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M6.70994 2.11997L2.82994 5.99997L6.70994 9.87997C7.09994 10.27 7.09994 10.9 6.70994 11.29C6.31994 11.68 5.68994 11.68 5.29994 11.29L0.709941 6.69997C0.319941 6.30997 0.319941 5.67997 0.709941 5.28997L5.29994 0.699971C5.68994 0.309971 6.31994 0.309971 6.70994 0.699971C7.08994 1.08997 7.09994 1.72997 6.70994 2.11997V2.11997Z"
-                        fill="#A3AED0"
-                      />
-                    </svg>
-                    <p className="ml-3 text-sm text-gray-600">
-                      Back to Dashboard
-                    </p>
-                  </div>
-                </Link>
-                <div className="grid grid-cols-2 grid-rows-1 gap-4">
-                  <div>
-
-                  <SignIn/>
-                  <img src={bgDot} alt="" className="bgDot1" />
-                  <img src={bgDot} alt="" className="bgDot2" />
-                  </div>
-                  <div className={' relative md-max:hidden'}>
-                    {/* <div
-                    className="absolute flex h-full w-full items-end justify-center bg-cover bg-center lg:rounded-bl-[120px] xl:rounded-bl-[200px]"
-                    style={{ backgroundImage: `url(${authImg})` }}
-                  /> */}
-                    <video src={Video} autoPlay loop muted className="login-video"></video>
-                  </div>
-                </div>
-              </div>
-              <Footer />
-            </div>
+    <>
+      <FixedPlugin />
+      <div className="bgContainer">
+        <div className="overlay"></div>
+        <div className="bgVideo-container">
+          <video className="bgVideo" src={Video} autoPlay loop muted />
+        </div>
+        <div className="card-box">
+          <div>
+            <SignIn />
+            <img src={bgDot} alt="" className="bgDot1" />
+            <img src={bgDot} alt="" className="bgDot2" />
           </div>
-        </main>
+        </div>
       </div>
-    </div>
+      <div className="foot">
+        <Footer />
+      </div>
+    </>
   );
 }

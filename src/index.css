@@ -11,6 +11,10 @@
 
 .slick-dots li.slick-active button:before {
     color:#EB3223 !important;
+	margin-top: -1rem;
+}
+.slick-dots li button:before {
+	margin-top: -1rem;
 }
 
 @layer base {

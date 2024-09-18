@@ -12,7 +12,7 @@ export default function SignIn() {
         {/* Sign in section */}
         <div className="w-full max-w-full flex-col items-center md:pl-4 lg:pl-0 xl:max-w-[420px]">
           <h4 className="mb-6 text-center text-2xl font-bold text-blue-1000">
-            Hyper<span className="text-red-1000">trace</span>
+            Hypertrace
           </h4>
           <p className="welcome-text text-dark mb-1 ml-1 text-base">
             Welcome to Hypertrace! 👋🏻
@@ -70,17 +70,6 @@ export default function SignIn() {
           <button className="linear mt-2 w-full rounded-xl py-[12px] text-base font-medium text-white transition duration-200 hover:bg-brand-600 active:bg-brand-700 dark:bg-brand-400 dark:text-white dark:hover:bg-brand-300 dark:active:bg-brand-200">
             <Link to="/admin">Sign In</Link>
           </button>
-          <div className="mt-4">
-            <span className=" text-sm font-medium text-navy-700 dark:text-gray-600">
-            New on our platform?
-            </span>
-            <Link
-              to="/signUp"
-              className="ml-1 text-sm font-medium text-blue-1000 hover:text-brand-600 dark:text-white"
-            >
-              Create an account
-            </Link>
-          </div>
         </div>
       </div>
     </Card>
