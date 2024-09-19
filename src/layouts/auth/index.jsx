@@ -23,7 +23,6 @@ export default function Auth() {
   document.documentElement.dir = "ltr";
   return (
     <>
-      <FixedPlugin />
       <div className="bgContainer">
         <div className="overlay"></div>
         <div className="bgVideo-container">
@@ -36,9 +35,10 @@ export default function Auth() {
             <img src={bgDot} alt="" className="bgDot2" />
           </div>
         </div>
-      </div>
-      <div className="foot">
-        <Footer />
+        <div className="foot flex">
+          <Footer />
+          <FixedPlugin />
+        </div>
       </div>
     </>
   );

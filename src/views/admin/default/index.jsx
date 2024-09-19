@@ -15,7 +15,7 @@ import FleetViewTable from "views/admin/default/components/FleetViewTable";
 import ComplexTable from "views/admin/default/components/ComplexTable";
 import DailyTraffic from "views/admin/default/components/DailyTraffic";
 import TaskCard from "views/admin/default/components/TaskCard";
-import OlaMap from "views/admin/default/components/OlaMap";
+import MapView from "views/admin/default/components/MapView";
 import tableDataCheck from "./variables/tableDataCheck.json";
 import tableDataComplex from "./variables/tableDataComplex.json";
 import fleetViewData from "./variables/fleetViewData.json";
@@ -65,9 +65,9 @@ const Dashboard = () => {
 
       {/* ola map */}
 
-      {/* <div className="mt-3 grid grid-cols-1">
-      <OlaMap />
-      </div> */}
+      <div className="mt-3 grid grid-cols-1">
+      <MapView />
+      </div>
 
       {/* Tables & Charts */}
 

@@ -13,10 +13,38 @@ import tableDataComplex from "./variables/tableDataComplex.json";
 import DevelopmentTable from "./components/DevelopmentTable";
 import ColumnsTable from "./components/ColumnsTable";
 import ComplexTable from "./components/ComplexTable";
+import { Tabs, Tab } from "./components/ReportTabs";
 
 const Tables = () => {
   return (
     <div>
+      <Tabs>
+        <Tab label="Report 1">
+          <div className="py-4">
+            <DevelopmentTable
+              columnsData={columnsDataDevelopment}
+              tableData={tableDataDevelopment}
+            />
+          </div>
+        </Tab>
+        <Tab label="Report 2">
+          <div className="py-4">
+            <ColumnsTable
+              columnsData={columnsDataColumns}
+              tableData={tableDataColumns}
+            />
+          </div>
+        </Tab>
+        <Tab label="Report 3">
+          <div className="py-4">
+            <ComplexTable
+              columnsData={columnsDataComplex}
+              tableData={tableDataComplex}
+            />
+          </div>
+        </Tab>
+      </Tabs>
+
       <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
         <DevelopmentTable
           columnsData={columnsDataDevelopment}

@@ -12,7 +12,7 @@ export default function SignIn() {
         {/* Sign in section */}
         <div className="w-full max-w-full flex-col items-center md:pl-4 lg:pl-0 xl:max-w-[420px]">
           <h4 className="mb-6 text-center text-2xl font-bold text-blue-1000">
-            Hypertrace
+            hypertrace
           </h4>
           <p className="welcome-text text-dark mb-1 ml-1 text-base">
             Welcome to Hypertrace! 👋🏻
