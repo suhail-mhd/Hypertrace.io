@@ -14,6 +14,10 @@ import DevelopmentTable from "./components/DevelopmentTable";
 import ColumnsTable from "./components/ColumnsTable";
 import ComplexTable from "./components/ComplexTable";
 import { Tabs, Tab } from "./components/ReportTabs";
+import ReportPieChart from "./components/ReportPieChart";
+import ReportTile from "./components/ReportTile";
+import DailyTraffic from "./components/DailyTraffic";
+import PieChartCard from "./components/PieChartCard";
 
 const Tables = () => {
   return (
@@ -25,6 +29,10 @@ const Tables = () => {
               columnsData={columnsDataDevelopment}
               tableData={tableDataDevelopment}
             />
+            <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
+              <ReportPieChart />
+              <ReportTile />
+            </div>
           </div>
         </Tab>
         <Tab label="Report 2">
@@ -33,6 +41,10 @@ const Tables = () => {
               columnsData={columnsDataColumns}
               tableData={tableDataColumns}
             />
+            <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
+              <ReportTile />
+              <DailyTraffic />
+            </div>
           </div>
         </Tab>
         <Tab label="Report 3">
@@ -41,11 +53,15 @@ const Tables = () => {
               columnsData={columnsDataComplex}
               tableData={tableDataComplex}
             />
+            <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
+              <PieChartCard />
+              <ReportTile />
+            </div>
           </div>
         </Tab>
       </Tabs>
 
-      <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
+      {/* <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
         <DevelopmentTable
           columnsData={columnsDataDevelopment}
           tableData={tableDataDevelopment}
@@ -63,7 +79,7 @@ const Tables = () => {
           columnsData={columnsDataComplex}
           tableData={tableDataComplex}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
