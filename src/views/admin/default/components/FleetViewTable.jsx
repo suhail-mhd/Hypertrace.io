@@ -4,6 +4,8 @@ import CardMenu from "components/card/CardMenu";
 import Checkbox from "components/checkbox";
 import Card from "components/card";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5";
+import { HiX } from "react-icons/hi";
+import { FiSearch } from "react-icons/fi";
 
 import {
   createColumnHelper,
@@ -14,11 +16,14 @@ import {
   PaginationState,
   getFilteredRowModel,
   getPaginationRowModel,
+  ColumnFiltersState,
 } from "@tanstack/react-table";
 
 function FleetViewTable(props) {
   const { tableData } = props;
   const [sorting, setSorting] = React.useState([]);
+  const [columnFilters, setColumnFilters] = React.useState([]);
+  const [searchValue, setSearchValue] = useState('');
   let defaultData = tableData;
   const columns = [
     columnHelper.accessor("vehicle", {
@@ -31,10 +36,9 @@ function FleetViewTable(props) {
       cell: (info) => (
         <div className="flex items-center">
           <Link to="/vehicleDetails">
-
-          <p className="ml-3 text-sm font-bold text-navy-700 dark:text-white">
-            {info.getValue()}
-          </p>
+            <p className="ml-3 text-sm font-bold text-navy-700 dark:text-white">
+              {info.getValue()}
+            </p>
           </Link>
         </div>
       ),
@@ -117,7 +121,9 @@ function FleetViewTable(props) {
     state: {
       sorting,
       pagination,
+      columnFilters,
     },
+    onColumnFiltersChange: setColumnFilters,
     onSortingChange: setSorting,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
@@ -129,6 +135,11 @@ function FleetViewTable(props) {
     getPaginationRowModel: getPaginationRowModel(),
     onPaginationChange: setPagination,
   });
+
+  const clearSearch = () => {
+    setSearchValue(''); // Clear the input value// Remove the 'vehicle' filter
+    setColumnFilters(columnFilters.filter(filter => filter.id !== 'vehicle'));
+  };
   return (
     <Card extra={"w-full h-full sm:overflow-auto p-6"}>
       <header className="relative flex items-center justify-between">
@@ -136,7 +147,39 @@ function FleetViewTable(props) {
           Fleet View
         </div>
 
-        <CardMenu />
+        {/* <CardMenu /> */}
+        <div className="mb-6 flex items-center justify-center">
+          
+          <div className="mr-3 flex h-full items-center rounded-full bg-lightPrimary py-2 text-navy-700 dark:bg-navy-900 dark:text-white">
+            <p className="pl-3 pr-2 text-xl">
+              <FiSearch className="h-4 w-4 text-gray-400 dark:text-white" />
+            </p>
+            <input
+              type="text"
+              placeholder="Search..."
+              class="block h-full w-full rounded-full bg-lightPrimary text-sm font-medium text-navy-700 outline-none placeholder:!text-gray-400 dark:bg-navy-900 dark:text-white dark:placeholder:!text-white sm:w-fit"
+                // value={searchValue}
+              onChange={(e) =>
+                setColumnFilters([
+                  columnFilters,
+                  {
+                    id: "vehicle",
+                    value: e.target.value,
+                  },
+                ])
+              }
+            />
+          </div>
+
+          {/* <span className="absolute right-[100px] top-2 block cursor-pointer" onClick={clearSearch}>
+            <HiX />
+          </span> */}
+          <select className="mb-3 mr-2 flex items-center justify-center text-sm font-bold text-gray-600 hover:cursor-pointer dark:!bg-navy-800 dark:text-white">
+            <option value="monthly">Monthly</option>
+            <option value="yearly">Yearly</option>
+            <option value="weekly">Weekly</option>
+          </select>
+        </div>
       </header>
 
       <div className="mt-8 overflow-x-scroll xl:overflow-x-hidden">
@@ -231,7 +274,7 @@ function FleetViewTable(props) {
             >
               {">>"}
             </button>
-            
+
             {/* <span className="flex items-center gap-1">
               | Go to page:
               <input
