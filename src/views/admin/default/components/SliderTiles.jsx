@@ -57,7 +57,6 @@ const SliderTiles = () => {
     
     axios.request(config)
     .then((response) => {
-      console.log("sliderData....",JSON.stringify(response.data.cardslideritems));
       SetCard(response.data.cardslideritems)
     })
     .catch((error) => {
@@ -75,7 +74,7 @@ const SliderTiles = () => {
     // <div className="slider-container">
     <Slider {...settings}>
        {card.map((card) => (
-      <div key={card.id} className=" h-44 relative rounded-[6px] bg-white bg-clip-border dark:!bg-navy-800 dark:text-white dark:shadow-none">
+      <div key={card.id} className="h-44  relative rounded-[6px] bg-white bg-clip-border dark:!bg-navy-800 dark:text-white dark:shadow-none">
         <div className="ml-[18px] flex h-[90px] w-auto flex-row items-center">
           <div className="rounded-full bg-lightPrimary p-3 dark:bg-navy-700">
             <span className="flex items-center text-brand-500 dark:text-white">

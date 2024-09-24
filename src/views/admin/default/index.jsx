@@ -67,7 +67,8 @@ const Dashboard = () => {
       <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
         <div className="col-span-2">
           {/* <TotalSpent /> */}
-          <FleetSummaryDiagram />
+          {/* <FleetSummaryDiagram /> */}
+          <PieChartCard />
         </div>
         <SliderTiles />
       </div>
