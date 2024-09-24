@@ -7,7 +7,11 @@ import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
 import { FaTruckMoving } from "react-icons/fa";
 
-import { columnsDataCheck, columnsDataComplex, fleetView } from "./variables/columnsData";
+import {
+  columnsDataCheck,
+  columnsDataComplex,
+  fleetView,
+} from "./variables/columnsData";
 
 import Widget from "components/widget/Widget";
 import CheckTable from "views/admin/default/components/CheckTable";
@@ -24,94 +28,59 @@ import userBanner from "../../../assets/img/dashboards/illustration-john-light 1
 import SliderTiles from "./components/SliderTiles";
 import FleetSummaryDiagram from "./components/FleetSummaryDiagram";
 
-
 const Dashboard = () => {
-  
+  const loc = JSON.parse(localStorage.getItem("userInfo"));
+
   return (
     <div>
       {/* Card widget */}
 
-      <div className="mt-3 grid grid-cols-1">
-        <Card
-          extra="!flex-row flex-grow items-center rounded-[6px] relative"
-          style={{ height: "200px" }}
-        >
-          <div className="h-50 ml-4 flex w-auto flex-col">
-            <h4 className="text-xl font-bold text-blue-1000 dark:text-white">
-              Welcome John! 🎉
-            </h4>
-            <p className="mb-6 font-dm text-sm font-medium text-gray-600">
-              Your journey to smarter fleet management <br /> starts here!
-            </p>
-            <button className="linear rounded-[20px] bg-gray-1000 px-2 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700 dark:bg-blue-1000 dark:hover:bg-brand-300 dark:active:opacity-90 md-max:w-32">
-              View Details
-            </button>
-          </div>
-          <div className="absolute right-14 ml-[18px] flex h-[90px] w-auto flex-row items-center md-max:right-3 md-max:w-35p">
-            <img src={userBanner} alt="" />
-          </div>
-        </Card>
-      </div>
+      {loc ? (
+        <div className="mt-3 grid grid-cols-1">
+          <Card
+            extra="!flex-row flex-grow items-center rounded-[6px] relative"
+            style={{ height: "200px" }}
+          >
+            <div className="h-50 ml-4 flex w-auto flex-col">
+              <h4 className="text-xl font-bold text-blue-1000 dark:text-white">
+                Account: {loc.accountType} 🎉
+              </h4>
+              <p className="mb-6 font-dm text-sm font-medium text-gray-600">
+                Your journey to smarter fleet management <br /> starts here!
+              </p>
+              <button className="linear rounded-[20px] bg-gray-1000 px-2 py-2 text-base font-medium text-white transition duration-200 hover:bg-brand-800 active:bg-brand-700 dark:bg-blue-1000 dark:hover:bg-brand-300 dark:active:opacity-90 md-max:w-32">
+                View Details
+              </button>
+            </div>
+            <div className="absolute right-14 ml-[18px] flex h-[90px] w-auto flex-row items-center md-max:right-3 md-max:w-35p">
+              {/* <img src={loc.imagepath} alt="" /> */}
+              <img src={userBanner} alt="" />
+            </div>
+          </Card>
+        </div>
+      ) : (
+        ""
+      )}
 
       {/* Charts */}
 
       <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
         <div className="col-span-2">
           {/* <TotalSpent /> */}
-          <FleetSummaryDiagram/>
+          <FleetSummaryDiagram />
         </div>
-        <SliderTiles/>
+        <SliderTiles />
       </div>
 
-      {/* ola map */}
-
-      <div className="mt-3 grid grid-cols-1">
-      <MapView />
-      </div>
-
-      {/* Tables & Charts */}
+      {/* Table & Map */}
 
       <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-1">
-      <div>
+        <div>
           <FleetViewTable
-            columnsData={fleetView}
-            tableData={fleetViewData}
             rowsPerPage={5}
           />
         </div>
-      </div>
-
-      <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-2">
-        {/* Check Table */}
-        <div>
-          <CheckTable
-            columnsData={columnsDataCheck}
-            tableData={tableDataCheck}
-          />
-        </div>
-
-        {/* Traffic chart & Pie Chart */}
-
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <DailyTraffic />
-          <PieChartCard />
-        </div>
-
-        {/* Complex Table , Task & Calendar */}
-
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        />
-
-        {/* Task chart & Calendar */}
-
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <TaskCard />
-          <div className="grid grid-cols-1 rounded-[20px]">
-            <MiniCalendar />
-          </div>
-        </div>
+        <MapView />
       </div>
     </div>
   );
