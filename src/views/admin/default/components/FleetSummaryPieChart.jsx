@@ -70,7 +70,7 @@ const FleetSummaryPieChart = () => {
         <PieChart
           id="pie"
           dataSource={chartData}
-          palette="Bright"
+          palette={["#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD"]} 
           onPointClick={pointClickHandler}
           onLegendClick={legendClickHandler}
         >
