@@ -3,7 +3,7 @@ import axios from "axios";
 import { Chart } from "react-google-charts";
 import Card from "components/card";
 
-const PieChartCard = () => {
+const FleetSummaryPieChart = () => {
   // State to store pie chart data
   const [chartData, setChartData] = useState([["Category", "Value"]]);
 
@@ -59,7 +59,7 @@ const PieChartCard = () => {
       right: 20,
       bottom: 20,
     },
-    pieSliceText: "none",
+    pieSliceText: "value",
   };
 
   return (
@@ -67,7 +67,7 @@ const PieChartCard = () => {
       <div className="flex flex-row justify-between px-3 pt-2">
         <div>
           <h4 className="text-lg font-bold text-navy-700 dark:text-white">
-             Fleet Summary Pie Chart
+            Fleet Summary Pie Chart
           </h4>
         </div>
       </div>
@@ -85,4 +85,4 @@ const PieChartCard = () => {
   );
 };
 
-export default PieChartCard;
+export default FleetSummaryPieChart;

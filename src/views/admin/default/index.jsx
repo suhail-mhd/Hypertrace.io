@@ -1,7 +1,8 @@
 import MiniCalendar from "components/calendar/MiniCalendar";
 import WeeklyRevenue from "views/admin/default/components/WeeklyRevenue";
 import TotalSpent from "views/admin/default/components/TotalSpent";
-import PieChartCard from "views/admin/default/components/PieChartCard";
+import FleetSummaryPieChart from "views/admin/default/components/FleetSummaryPieChart";
+import FleetSummaryDonutChart from "views/admin/default/components/FleetSummaryDonutChart";
 import { IoMdHome } from "react-icons/io";
 import { IoDocuments } from "react-icons/io5";
 import { MdBarChart, MdDashboard } from "react-icons/md";
@@ -27,6 +28,7 @@ import Card from "components/card";
 import userBanner from "../../../assets/img/dashboards/illustration-john-light 1.png";
 import SliderTiles from "./components/SliderTiles";
 import FleetSummaryDiagram from "./components/FleetSummaryDiagram";
+import FleetSummaryLineChart from "./components/FleetSummaryLineGraph";
 
 const Dashboard = () => {
   const loc = JSON.parse(localStorage.getItem("userInfo"));
@@ -62,24 +64,28 @@ const Dashboard = () => {
         ""
       )}
 
-      {/* Charts */}
+      {/* pie Charts & slider */}
 
       <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-3">
         <div className="col-span-2">
-          {/* <TotalSpent /> */}
-          {/* <FleetSummaryDiagram /> */}
-          <PieChartCard />
+          <FleetSummaryPieChart />
         </div>
         <SliderTiles />
+      </div>
+
+       {/* dunut Charts & line graph */}
+
+      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <FleetSummaryDonutChart />
+
+       <FleetSummaryLineChart/>
       </div>
 
       {/* Table & Map */}
 
       <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-1">
         <div>
-          <FleetViewTable
-            rowsPerPage={5}
-          />
+          <FleetViewTable rowsPerPage={5} />
         </div>
         <MapView />
       </div>
