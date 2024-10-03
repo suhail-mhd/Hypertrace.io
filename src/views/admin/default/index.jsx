@@ -87,7 +87,7 @@ const Dashboard = () => {
         <div>
           <FleetViewTable rowsPerPage={5} />
         </div>
-        {/* <MapView /> */}
+        <MapView />
       </div>
     </div>
   );

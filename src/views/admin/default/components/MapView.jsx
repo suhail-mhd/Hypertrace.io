@@ -1,43 +1,37 @@
-import React, { useState } from 'react'
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import React from 'react';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
 
-const libraries = ["places"];
-const mapContainerStyle = {
-  width: "100%",
-  height: "400px",
-};
+const MapView = () => {
+  const position = [51.505, -0.09];  // Latitude and Longitude for the initial position of the map
 
-export default function MapView() {
-  const [coords, setCoords] = useState({});
-  const [distance, setDistance] = useState(0);
-
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      const { latitude, longitude, accuracy } = position.coords;
-      setCoords({ lat: latitude, lng: longitude });
-      setDistance(accuracy);
-    });
-  }
-
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: "AIzaSyCRjxvetIo04UN5kgxWs7g1EzcIj24wSo0",
-    libraries,
+  const customIcon = new L.Icon({
+    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+    shadowSize: [41, 41],
   });
 
-  if (loadError) {
-    return <div>Error loading maps</div>;
-  }
-  if (!isLoaded) {
-    return <div>Loading maps ...</div>;
-  }
-
-  return isLoaded ? (
-    <GoogleMap
-    mapContainerStyle={mapContainerStyle}
-    center={coords}
-    zoom={10}
-  >
-    <Marker position={coords} />
-  </GoogleMap>
-  ) : <></>
+  return (
+    <MapContainer 
+      center={position} 
+      zoom={13} 
+      style={{ height: "500px", width: "100%" }}  // Set the size of the map
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      />
+      <Marker position={position} icon={customIcon}>
+        <Popup>
+          A simple popup on the marker.
+        </Popup>
+      </Marker>
+    </MapContainer>
+  );
 }
+
+export default MapView;

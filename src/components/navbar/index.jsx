@@ -67,7 +67,7 @@ const Navbar = (props) => {
             Are you sure want to Logout
           </Typography>
           <Box sx={{ justifyContent: "center", display: "flex" }}>
-            <Button onClick={logoutHandle}>Yes</Button>
+            <Button onClick={logoutHandle} className="text-red-500">Yes</Button>
             <Button onClick={() => setOpen(false)}>No</Button>
           </Box>
         </Box>
