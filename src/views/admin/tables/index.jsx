@@ -62,62 +62,6 @@ const Tables = () => {
 
   return (
     <>
-      <div className="tables-container flex">
-        {/* Tabs to select report type */}
-
-        <div className="w-1/6 p-4">
-          <DeviceDropdown
-            devices={devices}
-            selectedDevices={selectedDevices}
-            setSelectedDevices={setSelectedDevices}
-          />
-        </div>
-
-        <div className="w-3/4">
-          <Tabs>
-            <Tab label="Report 1">
-              <div className="py-4">
-               
-                <div className="mb-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
-                <PieChartCard />
-                  <ReportTile />
-                </div>
-                <DevelopmentTable
-                  columnsData={columnsDataDevelopment}
-                  tableData={tableDataDevelopment}
-                />
-              </div>
-            </Tab>
-            <Tab label="Report 2">
-              <div className="py-4">
-                
-                <div className="mb-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
-                  <ReportTile />
-                  <DailyTraffic />
-                </div>
-                <ColumnsTable
-                  columnsData={columnsDataColumns}
-                  tableData={tableDataColumns}
-                />
-              </div>
-            </Tab>
-            <Tab label="Report 3">
-              <div className="py-4">
-                
-                <div className="mb-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
-                  <PieChartCard />
-                  <ReportTile />
-                </div>
-                <ComplexTable
-                  columnsData={columnsDataComplex}
-                  tableData={tableDataComplex}
-                />
-              </div>
-            </Tab>
-          </Tabs>
-        </div>
-      </div>
-
       <div className="tables-container mb-[10rem] flex">
         {/* Left Sidebar for Device List */}
         <div className="w-1/6 p-4">
@@ -137,7 +81,7 @@ const Tables = () => {
             </label>
             <select
               id="report-select"
-              className="border p-2 focus:outline-none bg-transparent"
+              className="bg-transparent border p-2 focus:outline-none"
               value={selectedReport}
               onChange={handleReportChange}
             >
@@ -147,6 +91,8 @@ const Tables = () => {
               <option value="Complex Report">Complex Report</option>
             </select>
           </div>
+
+          
 
           {/* Conditionally render components based on the selected report */}
           <div className="mt-5 grid h-full grid-cols-1 gap-5 md:grid-cols-1">
