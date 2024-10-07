@@ -79,7 +79,7 @@ const Tables = () => {
               <div className="py-4">
                
                 <div className="mb-5 grid h-full grid-cols-1 gap-5 md:grid-cols-2">
-                  <ReportPieChart />
+                <PieChartCard />
                   <ReportTile />
                 </div>
                 <DevelopmentTable
@@ -132,12 +132,12 @@ const Tables = () => {
         <div className="w-3/4">
           {/* Dropdown to select report type */}
           <div className="top-bar flex justify-center p-4">
-            <label htmlFor="report-select" className="mr-3">
+            <label htmlFor="report-select" className="mr-3 dark:text-white">
               Select Report:
             </label>
             <select
               id="report-select"
-              className="border p-2 focus:outline-none"
+              className="border p-2 focus:outline-none bg-transparent"
               value={selectedReport}
               onChange={handleReportChange}
             >

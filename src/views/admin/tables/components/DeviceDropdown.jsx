@@ -11,7 +11,7 @@ const DeviceDropdown = ({ devices, selectedDevices, setSelectedDevices }) => {
 
   return (
     <div className="device-dropdown">
-      <label className="block mb-2">Select Device ID:</label>
+      <label className="block mb-2 dark:text-white">Select Device ID:</label>
       <div className="border p-4 rounded-md max-h-40 overflow-auto">
         {devices.map((device, index) => (
           <div key={index} className="mb-2 flex items-center">
@@ -21,7 +21,7 @@ const DeviceDropdown = ({ devices, selectedDevices, setSelectedDevices }) => {
               checked={selectedDevices.includes(device)}
               onChange={() => handleDeviceChange(device)}
             />
-            <label>{device}</label>
+            <label className="dark:text-white">{device}</label>
           </div>
         ))}
       </div>
