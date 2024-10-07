@@ -26,6 +26,13 @@ const routes = [
     component: <MainDashboard />,
   },
   {
+    name: "Reports",
+    layout: "/admin",
+    icon: <MdBarChart className="h-6 w-6" />,
+    path: "Reports",
+    component: <DataTables />,
+  },
+  {
     name: "Device Details",
     layout: "/admin",
     path: "device-details",
@@ -33,13 +40,7 @@ const routes = [
     component: <NFTMarketplace />,
     secondary: true,
   },
-  {
-    name: "Reports",
-    layout: "/admin",
-    icon: <MdBarChart className="h-6 w-6" />,
-    path: "data-tables",
-    component: <DataTables />,
-  },
+
   {
     name: "Profile",
     layout: "/admin",
